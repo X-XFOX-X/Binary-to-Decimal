@@ -1,50 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binary Converter</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #2c3e50, #4ca1af);
-            color: #fff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 300px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        input[type="number"], input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            text-align: center;
-        }
-        .output {
-            margin-top: 20px;
-            font-size: 18px;
-            word-break: break-word;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Decimal to Binary</h1>
@@ -57,41 +20,7 @@
         <input type="text" id="binaryInput" placeholder="Enter binary" oninput="convertToDecimal()" />
         <div class="output" id="decimalOutput"></div>
     </div>
-
-    <script>
-        function convertToBinary() {
-            const decimalInput = document.getElementById('decimalInput').value;
-            const binaryOutput = document.getElementById('binaryOutput');
-
-            if (decimalInput === "") {
-                binaryOutput.textContent = "";
-                return;
-            }
-
-            const number = parseInt(decimalInput, 10);
-            if (isNaN(number)) {
-                binaryOutput.textContent = "Invalid input. Please enter a valid number.";
-            } else {
-                binaryOutput.textContent = `Binary: ${number.toString(2)}`;
-            }
-        }
-
-        function convertToDecimal() {
-            const binaryInput = document.getElementById('binaryInput').value;
-            const decimalOutput = document.getElementById('decimalOutput');
-
-            if (binaryInput === "") {
-                decimalOutput.textContent = "";
-                return;
-            }
-
-            if (/^[01]+$/.test(binaryInput)) {
-                const number = parseInt(binaryInput, 2);
-                decimalOutput.textContent = `Decimal: ${number}`;
-            } else {
-                decimalOutput.textContent = "Invalid input. Please enter a valid binary number.";
-            }
-        }
-    </script>
+    <script src="./script.js"></script>
 </body>
+
 </html>
